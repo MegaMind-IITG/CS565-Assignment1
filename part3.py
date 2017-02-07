@@ -77,7 +77,7 @@ for w in sorted(counts, key=counts.get, reverse=True):
   	ans1=ans1+1
   else:
   	break
-print "Words required for 90% coverage"
+print "Words required for 90%% coverage"
 print ans1
 #print freq_words
 
@@ -105,7 +105,7 @@ for w in sorted(counts, key=counts.get, reverse=True):
   	ans2=ans2+1
   else:
   	break
-print "Bigrams required for 80% coverage"
+print "Bigrams required for 80%% coverage"
 print ans2
 #print freq_words
 
@@ -133,7 +133,7 @@ for w in sorted(counts, key=counts.get, reverse=True):
   	ans3=ans3+1
   else:
   	break
-print "Trigrams required for 70% coverage"
+print "Trigrams required for 70%% coverage"
 print ans3
 #print freq_words
 
@@ -174,7 +174,7 @@ for w in sorted(counts, key=counts.get, reverse=True):
   	ans1=ans1+1
   else:
   	break
-print "lemetized Words required for 90% coverage"
+print "Lemmatized Words required for 90%% coverage"
 print ans1
 #print freq_words
 
@@ -202,7 +202,7 @@ for w in sorted(counts, key=counts.get, reverse=True):
   	ans2=ans2+1
   else:
   	break
-print "lemetized Bigrams required for 80% coverage"
+print "Lemmatized Bigrams required for 80%% coverage"
 print ans2
 #print freq_words
 
@@ -230,7 +230,7 @@ for w in sorted(counts, key=counts.get, reverse=True):
   	ans3=ans3+1
   else:
   	break
-print "lemetized Trigrams required for 70% coverage"
+print "Lemmatized Trigrams required for 70%% coverage"
 print ans3
 #print freq_words
 os.remove('test.txt') 
