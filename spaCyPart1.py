@@ -104,6 +104,10 @@ trigrams = {}
 # bigrams, biExcep = findNGrams(corpus, 2, corpusName, filter_stops = False)
 # trigrams, triExcep = findNGrams(corpus, 3, corpusName, filter_stops = False)
 
+# unigrams, uniExcep = findNGrams(corpus, 1, corpusName, filter_stops = False, lemmatize = True)
+# bigrams, biExcep = findNGrams(corpus, 2, corpusName, filter_stops = False, lemmatize = True)
+# trigrams, triExcep = findNGrams(corpus, 3, corpusName, filter_stops = False, lemmatize = True)
+
 unigram_counts = countAndPlot(unigrams)
 bigram_counts = countAndPlot(bigrams)
 trigram_counts = countAndPlot(trigrams)
@@ -151,3 +155,13 @@ print np.argmin(tri_dec.cumsum() < 0.7*corpus_size),"most frequent trigrams (tot
 # 2556 most frequent words (total 10080 words) make up 90% of the corpus.
 # 43198 most frequent bigrams (total 56840 bigrams) make up 80% of the corpus.
 # 74375 most frequent trigrams (total 89535 trigrams) make up 70% of the corpus.
+
+##### Stop Words included and Lemmatization done
+# Took 10 seconds to complete. Storing 1gram to file inaugural.1gram
+# Took 89 seconds to complete. Storing 2gram to file inaugural.2gram
+# Took 154 seconds to complete. Storing 3gram to file inaugural.3gram
+
+# Total corpus size = 134413
+# 1464 most frequent words (total 7039 words) make up 90% of the corpus.
+# 36248 most frequent bigrams (total 49890 bigrams) make up 80% of the corpus.
+# 71147 most frequent trigrams (total 86307 trigrams) make up 70% of the corpus.
