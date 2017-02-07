@@ -56,8 +56,13 @@ def findNGrams(corpus, n, name = "corpus", filter_stops = True, lemmatize = Fals
 	end = time.time()
 	print("Took %d seconds to complete. Storing %dgram to file %s.%dgram" % ((end - start), n, name, n))
 	
+	exceptions = []
+	for key in ngrams.keys():
+		if len(key.split(' ')) > n:
+			exceptions.append(key)
+
 	# pickle.dump(ngrams, open(name + '.' + str(n) + 'gram', 'wb'))
-	return ngrams
+	return ngrams, exceptions
 
 def count(freqDict):
 	counts = []
@@ -78,13 +83,13 @@ def countAndPlot(freqDict):
 	plot(counts)
 	return counts
 
-# sentenceSegmentation(inaugural, 'inaugural')
-# sentsToCorpus('inaugural')
 corpusName = 'inaugural'
-corpus = sentsToCorpus(corpusName)
 unigrams = {}
 bigrams = {}
 trigrams = {}
+
+# sentenceSegmentation(inaugural, 'inaugural')
+# corpus = sentsToCorpus(corpusName)
 
 # corpusDict = createDict(corpus)
 # unigrams = findNGrams(corpus, 1, corpusName, filter_stops = True)
@@ -95,9 +100,9 @@ trigrams = {}
 # bigrams = findNGrams(corpus, 2, corpusName, filter_stops = True, lemmatize=True)
 # trigrams = findNGrams(corpus, 3, corpusName, filter_stops = True, lemmatize=True)
 
-# unigrams = findNGrams(corpus, 1, corpusName, filter_stops = False)
-# bigrams = findNGrams(corpus, 2, corpusName, filter_stops = False)
-# trigrams = findNGrams(corpus, 3, corpusName, filter_stops = False)
+# unigrams, uniExcep = findNGrams(corpus, 1, corpusName, filter_stops = False)
+# bigrams, biExcep = findNGrams(corpus, 2, corpusName, filter_stops = False)
+# trigrams, triExcep = findNGrams(corpus, 3, corpusName, filter_stops = False)
 
 unigram_counts = countAndPlot(unigrams)
 bigram_counts = countAndPlot(bigrams)
