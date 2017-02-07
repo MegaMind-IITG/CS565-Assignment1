@@ -93,14 +93,14 @@ import matplotlib.pyplot as plt
 
 ##----------SAVING AND LOADING DATA (PICKLING)---------------
 # #Saving data in pickle file
-# with open('inaugural_data.pickle', 'wb') as f:
+# with open('./data/inaugural_data.pickle', 'wb') as f:
 # 	pickle.dump(unigrams,f)
 # 	pickle.dump(bigrams,f)
 # 	pickle.dump(trigrams,f)
 
 
 ##Loading from pickle file
-# with open('inaugural_data.pickle', 'rb') as f:
+# with open('./data/inaugural_data.pickle', 'rb') as f:
 # 	unigrams = pickle.load(f)
 # 	bigrams = pickle.load(f)
 # 	trigrams = pickle.load(f)
