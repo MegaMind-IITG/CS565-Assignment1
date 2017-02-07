@@ -9,28 +9,28 @@ from time import sleep
 reload(sys)
  
 sys.setdefaultencoding('utf8')
-with open("./results/inaugural.txt", "w") as myfile:
+with open("../results/inaugural.txt", "w") as myfile:
 	for fileid in inaugural.fileids():
 		myfile.write(inaugural.raw(fileid).encode('utf-8').strip())
 
 
 
-f1 = open('./results/inaugural.txt', 'r')
-f2 = open('./results/x1.txt', 'w')
+f1 = open('../results/inaugural.txt', 'r')
+f2 = open('../results/x1.txt', 'w')
 for line in f1:
 	f2.write(line.replace('.', '.<end>').replace('?', '?<end>').replace('!', '!<end>').replace(':', ':<end>'))
 f1.close()
 f2.close()
 
-f1 = open('./results/x1.txt', 'r')
-f2 = open('./results/x2.txt', 'w')
+f1 = open('../results/x1.txt', 'r')
+f2 = open('../results/x2.txt', 'w')
 for line in f1:
 	f2.write(line.replace('.<end>"', '."<end>').replace('?<end>"', '?"<end>').replace('!<end>"', '!"<end>').replace(':<end>"', ':"<end>').replace('Mr.<end>', 'Mr.').replace('Dr.<end>', 'Dr.').replace('vs.<end>', 'vs.'))
 f2.close()
 f1.close()
 
-f1 = open('./results/x2.txt', 'r')
-f2 = open('./results/x3.txt', 'w')
+f1 = open('../results/x2.txt', 'r')
+f2 = open('../results/x3.txt', 'w')
 for line in f1:
 	f2.write(line.replace('\n','<end> ').replace('<end><end>','<end> '))
 f2.close()
@@ -38,7 +38,7 @@ f1.close()
 
 
 #to make list of sentences
-with open('./results/x3.txt', 'r') as myfile:
+with open('../results/x3.txt', 'r') as myfile:
 	sample=myfile.read().replace('\n', '')
 
 
@@ -258,7 +258,7 @@ def chisquare(A1,A2,alpha ):
 	# print chisq
 	if chisq >= alp:
 		temp=w1w2
-		with open("./results/chisq.txt", "a") as myfile:
+		with open("../results/chisq.txt", "a") as myfile:
 			myfile.write(temp)
 			myfile.write('\n')
 	return (chisq>=alp)

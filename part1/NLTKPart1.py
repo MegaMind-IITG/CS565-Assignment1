@@ -93,34 +93,34 @@ import matplotlib.pyplot as plt
 
 ##----------SAVING AND LOADING DATA (PICKLING)---------------
 # #Saving data in pickle file
-# with open('./data/inaugural_data.pickle', 'wb') as f:
+# with open('../data/inaugural_data.pickle', 'wb') as f:
 # 	pickle.dump(unigrams,f)
 # 	pickle.dump(bigrams,f)
 # 	pickle.dump(trigrams,f)
 
 
-##Loading from pickle file
-# with open('./data/inaugural_data.pickle', 'rb') as f:
-# 	unigrams = pickle.load(f)
-# 	bigrams = pickle.load(f)
-# 	trigrams = pickle.load(f)
+#Loading from pickle file
+with open('../data/inaugural_data.pickle', 'rb') as f:
+	unigrams = pickle.load(f)
+	bigrams = pickle.load(f)
+	trigrams = pickle.load(f)
 ##------------------------------------------------------------
 
 ##-----UNCOMMENT THIS BLOCK TO PLOT DISTRIBUTIONS----------
 #Plotting frequency distributions
-# unigram_counts = []
-# bigram_counts = []
-# trigram_counts = []
-# for x in unigrams:
-# 	unigram_counts.append(unigrams[x])
-# for x in bigrams:
-# 	bigram_counts.append(bigrams[x])
-# for x in trigrams:
-# 	trigram_counts.append(trigrams[x])
+unigram_counts = []
+bigram_counts = []
+trigram_counts = []
+for x in unigrams:
+	unigram_counts.append(unigrams[x])
+for x in bigrams:
+	bigram_counts.append(bigrams[x])
+for x in trigrams:
+	trigram_counts.append(trigrams[x])
 
-# unigram_counts = np.array(unigram_counts)
-# bigram_counts = np.array(bigram_counts)
-# trigram_counts = np.array(trigram_counts)
+unigram_counts = np.array(unigram_counts)
+bigram_counts = np.array(bigram_counts)
+trigram_counts = np.array(trigram_counts)
 
 # f = plt.figure(1)
 # plt.hist(unigram_counts,range=(1,20), bins=20)
